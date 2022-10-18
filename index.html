@@ -12,15 +12,17 @@
       console.log(info);
 
       // 디바이스 확인
-      if (info.indexOf("windows" >= 0)) {
+      if (info.match("windows")) {
         // info에 'windows'라는 문자가  없으면 -1 반환되고, 있으면 해당 문자의 인덱스값이 출력되므로 0보다 크거나 같다.
         osTxt = "윈도우";
-      } else if (info.indexOf("macintosh" >= 0)) {
+      } else if (info.match("macintosh")) {
         osTxt = "맥킨토시";
-      } else if (info.indexOf("ios" >= 0)) {
+      } else if (info.match("iphone")) {
         osTxt = "아이폰";
-      } else if (info.indexOf("android" >= 0)) {
+      } else if (info.match("android")) {
         osTxt = "안드로이드";
+      } else {
+        osTxt = "알수없는";
       }
       document.write(`<br>${osTxt} 운영체제입니다.`);
     </script>
